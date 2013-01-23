@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* CSS Document 
+VFW Project 3 
+Joshua Wisecup
+Term 0113 
+*/
+
+.headerRow {
+	-webkit-box-shadow: 0 10px 10px -8px #333;
+	-moz-box-shadow: 0 10px 10px -8px #333;
+	box-shadow: 0 10px 10px -8px #333;
+	z-index: 1000;
+	position: relative;
+	padding: 1.5em 0 2.5em 0;
+	background: #a9e4f7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9e4f7), color-stop(100%,#0fb4e7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a9e4f7 0%,#0fb4e7 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+}
+header h1 {
+	text-align: center;
+}
+header h1 a {	
+	color: white;
+}
+.bodyRow {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	background: #fff;
+	-webkit-box-shadow: 0 -4px 10px -4px #333;
+	-moz-box-shadow: 0 -4px 10px -4px #333;
+	box-shadow: 0 -4px 10px -4px #333;
+}	
+.nav > li > a:hover {
+	color: #ffffff;
+	background-color: #0088cc;
+}
+
+@media (max-width: 1010px) and (min-width: 768px) {
+	.span12 {
+		width: 100%;
+	}
+}
+
+/* Smartphones (landscape and portrait) ------------------------ */
+@media (max-width:479px) {
+/* body { border-left:5px solid yellow;} */
+}
+
+/* Smartphone (landscape) ------------------------ */ 
+@media (min-width: 480px) and (max-width: 767px) {
+/* body { border-left:5px solid orange;} */
+}
+/* Tablet (portrait) and lower styles go here ------------------------ */ 
+@media (max-width: 767px) {
+	.headerRow, .homepage .headerRow {
+		padding-top:0;
+		padding-bottom:5px;
+	}
+	body {
+		padding-left:0;
+		padding-right:0;
+	}
+	.outerContainer {
+		padding-left:20px;
+		padding-right:20px;
+	}
+	.footerRow {
+	 	padding-top:1em;
+	}
+}
+
+/* Tablet (portrait) to desktop ------------------------ */
+@media (min-width: 768px) and (max-width: 979px) {
+/* body { border-left:5px solid red;} */
+	.headerRow {
+	 	padding-top:0px;
+	}
+	.homepage .headerRow {
+		padding-top:0px;
+		padding-bottom:5px;
+	}
+}
+
+/* Tablet (landscape) and lower styles go here  ------------------------ */
+/* This is also the breakpoint for the top nav */
+@media (max-width: 980px) {
+	body {
+		padding-top:0px;
+	}
+}
+
+/* Desktop and Tablet Landscape ------------------------ */
+@media (min-width: 981px) {
+/* body { border-left:5px solid aqua;} */
+	h1 {
+		font-size: 50.5px;
+	}
+}
+
+/* Large desktop ------------------------ */
+@media (min-width: 1200px) {
+/* body { border-left:5px solid blue;} */
+}

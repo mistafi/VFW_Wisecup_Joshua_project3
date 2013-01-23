@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+    	<!-- VFW Project 3 -->
+    	<!-- Joshua Wisecup -->
+    	<!-- Term 0113 -->
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>Pebbly :: Add a Pebble</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="pebbly, pebble, track, location, retrace, follow">
+        <meta name="description" content="Keep track of where you've been so you can retrace your steps.">
+        <meta name="author" content="Joshua Wisecup">
+        <meta name="robots" content="noindex,nofollow">
+
+         <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+ 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+
+    	<!-- Le fav and touch icons -->
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+	</head>
+
+    <body>
+    
+    <div class="homepage">
+    
+	<div class="outerContainer headerRow">
+		<div class="container">
+          <div class="row">
+            <div class="span12">
+              <header>
+                 <h1>
+                    <a class="pebblyLogo" title="Link to Pebbly" href="index.html">
+                        Pebbly
+                    </a>
+                </h1>
+             </header>
+            </div>
+          </div>
+		</div>
+	</div>
+    
+	<div class="outerContainer bodyRow">
+		<div class="container">
+            <div class="row">
+              <div class="span12" id="mainContainer">
+                 <p>You're on your way! Adding a Pebble is adding a location to your list. Add a Pebble below.</p>
+                 <form class="form-horizontal" id="pebbleForm">
+                   <fieldset>
+    				<legend>Add a Pebble</legend>
+                  <div class="control-group">
+                    <label id="labelSelect" class="control-label" for="dropdownSelect">Type</label>
+                    <div id="selectDiv" class="controls" >
+<!--						<select id="dropdownSelect">
+                          <option>Restaurant</option>
+                          <option>Gas Station</option>
+                          <option>Retail Store</option>
+                        </select>-->
+                    </div>
+                  </div>                     
+                  <div class="control-group">
+                    <label class="control-label" for="inputName">Name</label>
+                    <div class="controls">
+                      <input type="text" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputAddress">Address</label>
+                    <div class="controls">
+                      <input type="text" id="inputAddress" placeholder="Address">
+                    </div>
+                  </div>                  
+                  <div class="control-group">
+                    <label class="control-label" for="inputAddress2">Address 2</label>
+                    <div class="controls">
+                      <input type="text" id="inputAddress2" placeholder="Address 2">
+                    </div>
+                  </div> 
+                  <div class="control-group">
+                    <label class="control-label" for="inputCity">City</label>
+                    <div class="controls">
+                      <input type="text" id="inputCity" placeholder="City">
+                    </div>
+                  </div>                  
+                  <div class="control-group">
+                    <label class="control-label" for="inputState">State</label>
+                    <div class="controls">
+                      <input type="text" id="inputState" placeholder="State">
+                    </div>
+                  </div>  
+                  <div class="control-group">
+                    <label class="control-label" for="inputZip">Zip Code</label>
+                    <div class="controls">
+                      <input type="text" id="inputZip" placeholder="Zip Code">
+                    </div>
+                  </div>  
+                  <div class="control-group">
+                    <label class="control-label" for="inputRating">Rating</label>
+                    <div class="controls">
+                      0 <input type="range" min="0" max="10" step="1" value="5" id="inputRating"> 10
+                    </div>
+                  </div> 
+                  <div class="control-group">
+                    <label class="control-label" for="inputDate">Date</label>
+                    <div class="controls">
+                      <input type="date" id="inputDate">
+                    </div>
+                  </div> 
+                  <div class="control-group">
+                    <div class="controls">
+                      <input type="hidden" id="inputHidden" value="Text">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputArea">Notes</label>
+                    <div class="controls">
+						<textarea id="inputArea" rows="3"></textarea>                    </div>
+                  </div> 
+                  <div class="control-group">
+                    <div class="controls">
+	                  <label class="checkbox">
+						<input id="fav" type="checkbox" value="Yes">
+							Add to Favorites
+						</label>
+                    </div>
+				</div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <input type="submit" id="submit" class="btn btn-large btn-block btn-success" value="Add Location">
+                    </div>
+                  </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+      </div>
+	</div>
+    
+	<div class="outerContainer footerRow">
+		<div class="container">
+			<div class="row" id="footer">
+            	<nav>
+                    <ul class="nav nav-pills">
+                      <li>
+                        <a href="index.html">Home</a>
+                      </li>
+                      <li><a id="clear" href="#">Clear Stored Data</a></li>
+                      <li><a id="displayLink" href="#">Display Data</a></li>
+                      <li><a id="addPebble" href="additem.html" style="display:none;">Add New Item</a></li>
+
+                    </ul>  
+				</nav>          
+			</div>
+        </div>
+	</div>
+        
+        
+        <!-- Le javascript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+		<!--<script src="js/bootstrap.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
