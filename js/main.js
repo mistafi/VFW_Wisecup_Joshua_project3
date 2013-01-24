@@ -116,9 +116,22 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubli.innerHTML = optSubText;
 				makeSubList.appendChild(navLinksLi);
 			}
-			document.getElementById("mainContainer").appendChild(makeDiv);
-			makeNavLinksLi(); // create edit and delete links for each item in local storage
+			makeNavLinksLi(localStorage.key(i)); // create edit and delete links for each item in local storage
 		}
+		document.getElementById("mainContainer").appendChild(makeDiv);
+	}
+	
+	//Make Navigation Links for Items
+	//create edit and delete links
+	function makeNavLinksLi(){
+		//add edit single item link
+		var editLink = document.createElement("a");
+		var editLinkhref = "#";
+		editLink.key = key;
+		var editText = "Edit Contact";
+		editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		navLinksLi.appendChild(editLink);
 	}
 	
 	function clearLocal(){
