@@ -100,6 +100,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 		for (var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement("li");
+			var navLinksLi = document.createElement("li");
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -113,6 +114,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(makeSubli);
 				var optSubText = obj[n][0]+" "+obj[n][1];
 				makeSubli.innerHTML = optSubText;
+				makeSubList.appendChild(navLinksLi);
 			}
 			document.getElementById("mainContainer").appendChild(makeDiv);
 		}
