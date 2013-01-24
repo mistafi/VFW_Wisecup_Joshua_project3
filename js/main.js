@@ -117,6 +117,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(navLinksLi);
 			}
 			document.getElementById("mainContainer").appendChild(makeDiv);
+			makeNavLinksLi(); // create edit and delete links for each item in local storage
 		}
 	}
 	
