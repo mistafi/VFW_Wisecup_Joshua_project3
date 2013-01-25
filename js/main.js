@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		switch(n){
 			case "on":
 				document.getElementById("pebbleForm").style.display = "none";
-				document.getElementById("displayLink").style.display = "none";
+				document.getElementById("displayLink").style.display = "block";
 				document.getElementById("addPebble").style.display = "block";	
 				break;
 			case "off":
