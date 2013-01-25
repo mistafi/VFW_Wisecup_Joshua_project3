@@ -90,24 +90,24 @@ window.addEventListener("DOMContentLoaded", function(){
 		alert("Pebble Saved! You have " + localStorage.length + " pebbles saved.");
 	}
 	
-	function getData(){
+	function getStorageData(){
 		toggleControls("on");
 		if(localStorage.length === 0) {
 			alert("There is no data in Local Storage.");
 		}
 		//write data from local storage to the browser
-		var makeDiv = document.createElement("div");
-		makeDiv.setAttribute("id", "items");
-		var makeList = document.createElement("ol");
-		makeList.setAttribute("class", "unstyled");
-		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
+		var makeNewDiv = document.createElement("div");
+		makeNewDiv.setAttribute("id", "items");
+		var makeNewList = document.createElement("ol");
+		makeNewList.setAttribute("class", "unstyled");
+		makeNewDiv.appendChild(makeNewList);
+		document.body.appendChild(makeNewDiv);
 		document.getElementById("items").style.display = "block";													
 
 		for (var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement("li");
 			var navLinksLi = document.createElement("li");
-			makeList.appendChild(makeli);
+			makeNewList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object using JSON.parse()
@@ -124,7 +124,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 			makeNavLinksLi(localStorage.key(i), navLinksLi); // create edit and delete links for each item in local storage
 		}
-		document.getElementById("mainContainer").appendChild(makeDiv);
+		document.getElementById("mainContainer").appendChild(makeNewDiv);
 	}
 	
 	//Make Navigation Links for Items
@@ -292,7 +292,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//Set Link and Submit Click Events
 	var displayDataLink = $("displayDataLink");
-	document.getElementById("displayDataLink").addEventListener("click", getData);
+	document.getElementById("displayDataLink").addEventListener("click", getStorageData);
 	var clearDataLink = $("clearData");
 	document.getElementById("clearData").addEventListener("click", clearLocalStorage);
 	var save = $("submit");
