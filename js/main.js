@@ -223,7 +223,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var checkState = document.getElementById("inputState");
 		
 		//reset error messages
-		errMsg.innerHTML = "";
+		errMessage.innerHTML = "";
 		checkGroup.style.border = "1px solid #cccccc";
 		checkName.style.border = "1px solid #cccccc";
 		checkAddress.style.border = "1px solid #cccccc";
@@ -269,7 +269,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			for(var i=0, j=messagesArray.length; i < j; i++){
 				var txt = document.createElement("li");
 				txt.innerHTML = messagesArray[i];
-				errMsg.appendChild(txt);
+				errMessage.appendChild(txt);
 			}
 			v.preventDefault();
 			return false;
@@ -285,7 +285,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Variable defaults
 	var pebbleGroups = ["--Choose a Type--", "Restaurant", "Gas Station", "Retail Store"],
 		favoriteValue = "No",
-		errMsg = document.getElementById("errorMessages");
+		errMessage = document.getElementById("errorMessages");
 	;
 	makeSelectField();
 	
@@ -295,7 +295,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.getElementById("displayDataLink").addEventListener("click", getStorageData);
 	var clearDataLink = $("clearData");
 	document.getElementById("clearData").addEventListener("click", clearLocalStorage);
-	var save = $("submit");
+	var saveData = $("submit");
 	document.getElementById("submit").addEventListener("click", storeTheData);
 
 
