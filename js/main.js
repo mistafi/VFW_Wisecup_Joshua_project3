@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function toggleControls(n){
+	function toggleTheControls(n){
 		switch(n){
 			case "on":
 				document.getElementById("pebbleForm").style.display = "none";
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function storeData (key) {
+	function storeTheData (key) {
 		//if no key, then it's brand new and we need a new key
 		if(!key){
 		var id 				= Math.floor(Math.random()*100000001);
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function getStorageData(){
-		toggleControls("on");
+		toggleTheControls("on");
 		if(localStorage.length === 0) {
 			alert("There is no data in Local Storage.");
 		}
@@ -105,16 +105,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		document.getElementById("items").style.display = "block";													
 
 		for (var i=0, len=localStorage.length; i<len;i++){
-			var makeli = document.createElement("li");
+			var makeNewLi = document.createElement("li");
 			var navLinksLi = document.createElement("li");
-			makeNewList.appendChild(makeli);
+			makeNewList.appendChild(makeNewLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object using JSON.parse()
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement("ul");
 			makeSubList.setAttribute("class", "unstyled well");
-			makeli.appendChild(makeSubList);
+			makeNewLi.appendChild(makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement("li");
 				makeSubList.appendChild(makeSubli);
@@ -131,37 +131,37 @@ window.addEventListener("DOMContentLoaded", function(){
 	//create edit and delete links
 	function makeNavLinksLi(key, navLinksLi){
 		//add edit single item link
-		var editLink = document.createElement("a");
-		editLink.href = "#";
-		editLink.key = key;
-		var editText = "Edit Contact";
-		editLink.addEventListener("click", editItem);
-		editLink.innerHTML = editText;
-		navLinksLi.appendChild(editLink);
+		var editDataLink = document.createElement("a");
+		editDataLink.href = "#";
+		editDataLink.key = key;
+		var editDataText = "Edit Contact";
+		editDataLink.addEventListener("click", editDataItem);
+		editDataLink.innerHTML = editDataText;
+		navLinksLi.appendChild(editDataLink);
 		
 		//add line break
-		var breakTag = document.createElement("br");
-		navLinksLi.appendChild(breakTag);
+		var breakReturnTag = document.createElement("br");
+		navLinksLi.appendChild(breakReturnTag);
 		
 		
 		//add delete single item link
-		var deleteLink = document.createElement("a");
-		deleteLink.href = "#";
-		deleteLink.key = key;
-		var deleteText = "Delete Contact";
-		deleteLink.addEventListener("click", deleteItem);
-		deleteLink.innerHTML = deleteText;
-		navLinksLi.appendChild(deleteLink);
+		var deleteDataLink = document.createElement("a");
+		deleteDataLink.href = "#";
+		deleteDataLink.key = key;
+		var deleteDataText = "Delete Contact";
+		deleteDataLink.addEventListener("click", deleteDataItem);
+		deleteDataLink.innerHTML = deleteDataText;
+		navLinksLi.appendChild(deleteDataLink);
 	
 	}
 	
-	function editItem(){
+	function editDataItem(){
 	//Grab data from local storage
 	var value = localStorage.getItem(this.key);
 	var item = JSON.parse(value);
 	
 	//Show the form
-	toggleControls("off");
+	toggleTheControls("off");
 	
 	//populate the form fields with current localStorage values
 	document.getElementById("dropdownSelect").value = item.dropdownSelect[1];
@@ -178,7 +178,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	//Remove inital listener from save button
-	submit.removeEventListener("click", storeData);
+	submit.removeEventListener("click", storeTheData);
 	
 	//change submit button to edit button
 	document.getElementById("submit").value = "Edit Contact";
@@ -192,7 +192,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	}
 	
-	function deleteItem(){
+	function deleteDataItem(){
 		var ask = confirm("Are you sure you want to delete this pebble?");	
 		if(ask){
 			localStorage.removeItem(this.key);
@@ -276,7 +276,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}else{
 			//if no errors, save data. send key val from editData function
 			//remember this key value was passed through editSubmit as a property
-			storeData(this.key);
+			storeTheData(this.key);
 		}
 
 		
@@ -296,37 +296,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	var clearDataLink = $("clearData");
 	document.getElementById("clearData").addEventListener("click", clearLocalStorage);
 	var save = $("submit");
-	document.getElementById("submit").addEventListener("click", storeData);
+	document.getElementById("submit").addEventListener("click", storeTheData);
 
 
 
 });
 
-
-
-
-
-//var myField = document.getElementById("myText");
-
-//console.log("myField");
-
-//var tags = document.getElementsByTagName("li");
-
-//console.log("tags");
-
-
-/*var myUlTag = document.createElement("ul");
-var myDiv = document.getElementById("mainContent");
-
-var colors = [ "Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"];
-
-myDiv.appendChild(myUlTag);
-
-for(i=0, j=colors.length; i<j; i++) {
-	var liTag = document.createElement("li");
-	liTag.innerHTML = colors[i];
-	if(i%2 == 1){
-	liTag.setAttribute = ("class","even");
-	}
-	myUlTag.appendChild(liTag);
-};*/
