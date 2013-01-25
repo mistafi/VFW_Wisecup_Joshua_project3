@@ -116,23 +116,53 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubli.innerHTML = optSubText;
 				makeSubList.appendChild(navLinksLi);
 			}
-			makeNavLinksLi(localStorage.key(i)); // create edit and delete links for each item in local storage
+			makeNavLinksLi(localStorage.key(i), navLinksLi); // create edit and delete links for each item in local storage
 		}
 		document.getElementById("mainContainer").appendChild(makeDiv);
 	}
 	
 	//Make Navigation Links for Items
 	//create edit and delete links
-	function makeNavLinksLi(){
+	function makeNavLinksLi(key, navLinksLi){
 		//add edit single item link
 		var editLink = document.createElement("a");
-		var editLinkhref = "#";
+		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Contact";
-		editLink.addEventListener("click", editItem);
+		//editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		navLinksLi.appendChild(editLink);
+		
+		//add line break
+		var breakTag = document.createElement("br");
+		navLinksLi.appendChild(breakTag);
+		
+		
+		//add delete single item link
+		var deleteLink = document.createElement("a");
+		deleteLink.href = "#";
+		deleteLink.key = key;
+		var deleteText = "Delete Contact";
+		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+		navLinksLi.appendChild(deleteLink);
+	
 	}
+	
+	function editItem(){
+	//Grab data from local storage
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	
+	//Show the form
+	toggleControls("off");
+	
+	//populate the form fields with current localStorage values
+	$("groups").value = item.group[1];
+	
+	
+	}
+	
 	
 	function clearLocal(){
 		if(localStorage.length === 0){
