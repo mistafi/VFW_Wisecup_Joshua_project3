@@ -58,8 +58,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function storeData () {
+	function storeData (key) {
+		//if no key, then it's brand new and we need a new key
+		if(!key){
 		var id 				= Math.floor(Math.random()*100000001);
+		}else {
+			//set the id to the existing key so it will not overwrite the data
+			id = key;
+		}
 		//Gather up our form field values and store in an object
 		//Object properties contain an array with form label and input values
 		getCheckBoxValue();
@@ -143,7 +149,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Contact";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		navLinksLi.appendChild(deleteLink);
 	
@@ -186,6 +192,16 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	}
 	
+	function deleteItem(){
+		var ask = confirm("Are you sure you want to delete this pebble?");	
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Pebble was deleted.");
+			window.location.reload();
+		}else{
+			alert("Pebble was not deleted.");
+		}
+	}
 	
 	function clearLocal(){
 		if(localStorage.length === 0){
@@ -258,8 +274,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			v.preventDefault();
 			return false;
 		}else{
-			//if no errors, save data
-			storeData();
+			//if no errors, save data. send key val from editData function
+			//remember this key value was passed through editSubmit as a property
+			storeData(this.key);
 		}
 
 		
