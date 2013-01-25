@@ -160,15 +160,29 @@ window.addEventListener("DOMContentLoaded", function(){
 	//populate the form fields with current localStorage values
 	document.getElementById("dropdownSelect").value = item.dropdownSelect[1];
 	document.getElementById("inputName").value = item.inputName[1];
+	document.getElementById("inputAddress").value = item.inputAddress[1];
 	document.getElementById("inputAddress2").value = item.inputAddress2[1];
 	document.getElementById("inputCity").value = item.inputCity[1];
 	document.getElementById("inputState").value = item.inputState[1];
 	document.getElementById("inputZip").value = item.inputZip[1];
 	document.getElementById("inputRating").value = item.inputRating[1];
 	document.getElementById("inputArea").value = item.inputArea[1];
-		if(item.inputCheck[1] == "Yes"){
-			document.getElementById("fav").setAttribute("checked", "checked");
-		}
+	if(item.inputCheck[1] == "Yes"){
+		document.getElementById("fav").setAttribute("checked", "checked");
+	}
+	
+	//Remove inital listener from save button
+	submit.removeEventListener("click", storeData);
+	
+	//change submit button to edit button
+	document.getElementById("submit").value = "Edit Contact";
+	var editSubmit = document.getElementById("submit");
+	
+	//save key value for reuse
+	editSubmit.addEventListener("click", validate);
+	editSubmit.key = this.key;
+	
+	
 	
 	}
 	
@@ -184,9 +198,73 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	function validate(v){
+		//define the elements we want to check
+		var checkGroup = document.getElementById("dropdownSelect");
+		var checkName = document.getElementById("inputName");
+		var checkAddress = document.getElementById("inputAddress");
+		var checkCity = document.getElementById("inputCity");
+		var checkState = document.getElementById("inputState");
+		
+		//reset error messages
+		errMsg.innerHTML = "";
+		checkGroup.style.border = "1px solid #cccccc";
+		checkName.style.border = "1px solid #cccccc";
+		checkAddress.style.border = "1px solid #cccccc";
+		checkCity.style.border = "1px solid #cccccc";
+		checkState.style.border = "1px solid #cccccc";
+
+		//get error messages
+		var messagesArray = [];
+		
+		//group validation
+		if(checkGroup.value === "--Choose a Type--"){
+			var checkGroupError = "Please choose a group."
+			checkGroup.style.border = "1px solid red";
+			messagesArray.push(checkGroupError);
+		}
+		//name validation
+		if(checkName.value === ""){
+			var checkNameError = "Please enter a name."
+			checkName.style.border = "1px solid red";
+			messagesArray.push(checkNameError);
+		}
+		//address validation
+		if(checkAddress.value === ""){
+			var checkAddressError = "Please enter an address."
+			checkAddress.style.border = "1px solid red";
+			messagesArray.push(checkAddressError);
+		}
+		//city validation
+		if(checkCity.value === ""){
+			var checkCityError = "Please enter a city."
+			checkCity.style.border = "1px solid red";
+			messagesArray.push(checkCityError);
+		}
+		//state validation
+		if(checkState.value === ""){
+			var checkStateError = "Please enter a state."
+			checkState.style.border = "1px solid red";
+			messagesArray.push(checkStateError);
+		}
+		
+		//if there are errors, display them
+		if(messagesArray.length >= 1){
+			for(var i=0, j=messagesArray.length; i < j; i++){
+				var txt = document.createElement("li");
+				txt.innerHTML = messagesArray[i];
+				errMsg.appendChild(txt);
+			}
+		}
+		v.preventDefault();
+		return false;
+		
+	}
+	
 	//Variable defaults
 	var pebbleGroups = ["--Choose a Type--", "Restaurant", "Gas Station", "Retail Store"],
-		favoriteValue = "No"
+		favoriteValue = "No",
+		errMsg = document.getElementById("errorMessages");
 	;
 	makeSelectField();
 	
