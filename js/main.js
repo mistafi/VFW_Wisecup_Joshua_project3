@@ -255,9 +255,13 @@ window.addEventListener("DOMContentLoaded", function(){
 				txt.innerHTML = messagesArray[i];
 				errMsg.appendChild(txt);
 			}
+			v.preventDefault();
+			return false;
+		}else{
+			//if no errors, save data
+			storeData();
 		}
-		v.preventDefault();
-		return false;
+
 		
 	}
 	
