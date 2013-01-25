@@ -34,8 +34,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//Find value of a selected radio button
 	function getCheckBoxValue(){
-		if(document.getElementById("fav").checked){
-			favoriteValue = document.getElementById("fav").value;
+		if(document.getElementById("addfav").checked){
+			favoriteValue = document.getElementById("addfav").value;
 		}else{
 			favoriteValue = "No"
 		}
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		switch(n){
 			case "on":
 				document.getElementById("pebbleForm").style.display = "none";
-				document.getElementById("displayLink").style.display = "block";
+				document.getElementById("displayDataLink").style.display = "block";
 				document.getElementById("addPebble").style.display = "block";	
 				break;
 			case "off":
@@ -174,7 +174,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.getElementById("inputRating").value = item.inputRating[1];
 	document.getElementById("inputArea").value = item.inputArea[1];
 	if(item.inputCheck[1] == "Yes"){
-		document.getElementById("fav").setAttribute("checked", "checked");
+		document.getElementById("addfav").setAttribute("checked", "checked");
 	}
 	
 	//Remove inital listener from save button
@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function clearLocal(){
+	function clearLocalStorage(){
 		if(localStorage.length === 0){
 			alert("There is no data to clear.")
 		}else{
@@ -291,10 +291,10 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	
 	//Set Link and Submit Click Events
-	var displayLink = $("displayLink");
-	document.getElementById("displayLink").addEventListener("click", getData);
-	var clearLink = $("clear");
-	document.getElementById("clear").addEventListener("click", clearLocal);
+	var displayDataLink = $("displayDataLink");
+	document.getElementById("displayDataLink").addEventListener("click", getData);
+	var clearDataLink = $("clearData");
+	document.getElementById("clearData").addEventListener("click", clearLocalStorage);
 	var save = $("submit");
 	document.getElementById("submit").addEventListener("click", storeData);
 

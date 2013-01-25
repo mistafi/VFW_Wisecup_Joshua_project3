@@ -60,13 +60,13 @@
                       <li>
                         <a href="index.html">Home</a>
                       </li>
-                      <li><a id="clear" href="#">Clear Stored Data</a></li>
-                      <li><a id="displayLink" href="#">Display Data</a></li>
+                      <li><a id="clearData" href="#">Clear Stored Data</a></li>
+                      <li><a id="displayDataLink" href="#">Display Data</a></li>
                       <li><a id="addPebble" href="additem.html" style="display:none;">Add New Item</a></li>
-
                     </ul>  
 				</nav>   
-                 <p>You're on your way! Adding a Pebble is adding a location to your list. Add a Pebble below.</p>
+                 <p>You're on your way! Adding a Pebble is adding a location to your list. Add a Pebble below
+                 </p>
                  <ul id="errorMessages"></ul>
                  <form class="form-horizontal" id="pebbleForm">
                    <fieldset>
@@ -74,11 +74,6 @@
                   <div class="control-group">
                     <label id="labelSelect" class="control-label" for="dropdownSelect">Type</label>
                     <div id="selectDiv" class="controls" >
-<!--						<select id="dropdownSelect">
-                          <option>Restaurant</option>
-                          <option>Gas Station</option>
-                          <option>Retail Store</option>
-                        </select>-->
                     </div>
                   </div>                     
                   <div class="control-group">
@@ -137,12 +132,13 @@
                   <div class="control-group">
                     <label class="control-label" for="inputArea">Notes</label>
                     <div class="controls">
-						<textarea id="inputArea" rows="3"></textarea>                    </div>
+						<textarea id="inputArea" rows="3"></textarea>                    
+                    </div>
                   </div> 
                   <div class="control-group">
                     <div class="controls">
 	                  <label class="checkbox">
-						<input id="fav" type="checkbox" value="Yes">
+						<input id="addfav" type="checkbox" value="Yes">
 							Add to Favorites
 						</label>
                     </div>
@@ -167,10 +163,8 @@
                       <li>
                         <a href="index.html">Home</a>
                       </li>
-                      <li><a id="clear" href="#">Clear Stored Data</a></li>
-                      <li><a id="displayLink" href="#">Display Data</a></li>
+                      <li><a id="clearData" href="#">Clear Stored Data</a></li>
                       <li><a id="addPebble" href="additem.html" style="display:none;">Add New Item</a></li>
-
                     </ul>  
 				</nav>          
 			</div>
