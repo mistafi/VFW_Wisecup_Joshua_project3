@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Contact";
-		//editLink.addEventListener("click", editItem);
+		editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		navLinksLi.appendChild(editLink);
 		
@@ -158,8 +158,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	toggleControls("off");
 	
 	//populate the form fields with current localStorage values
-	$("groups").value = item.group[1];
-	
+	document.getElementById("dropdownSelect").value = item.dropdownSelect[1];
+	document.getElementById("inputName").value = item.inputName[1];
+	document.getElementById("inputAddress2").value = item.inputAddress2[1];
+	document.getElementById("inputCity").value = item.inputCity[1];
+	document.getElementById("inputState").value = item.inputState[1];
+	document.getElementById("inputZip").value = item.inputZip[1];
+	document.getElementById("inputRating").value = item.inputRating[1];
+	document.getElementById("inputArea").value = item.inputArea[1];
+		if(item.inputCheck[1] == "Yes"){
+			document.getElementById("fav").setAttribute("checked", "checked");
+		}
 	
 	}
 	
