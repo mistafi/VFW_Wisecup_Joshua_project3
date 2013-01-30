@@ -172,6 +172,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	document.getElementById("inputState").value = item.inputState[1];
 	document.getElementById("inputZip").value = item.inputZip[1];
 	document.getElementById("inputRating").value = item.inputRating[1];
+	document.getElementById("inputDate").value = item.inputDate[1];
 	document.getElementById("inputArea").value = item.inputArea[1];
 	if(item.inputCheck[1] == "Yes"){
 		document.getElementById("addfav").setAttribute("checked", "checked");
@@ -296,8 +297,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	var clearDataLink = $("clearData");
 	document.getElementById("clearData").addEventListener("click", clearLocalStorage);
 	var saveData = $("submit");
-	document.getElementById("submit").addEventListener("click", storeTheData);
-
+	document.getElementById("submit").addEventListener("click", validate);
+	
 
 
 });
