@@ -116,6 +116,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var makeSubList = document.createElement("ul");
 			makeSubList.setAttribute("class", "unstyled well");
 			makeNewLi.appendChild(makeSubList);
+			getCatImage(obj.dropdownSelect[1],makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement("li");
 				makeSubList.appendChild(makeSubli);
@@ -129,12 +130,12 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	//Get image for right category
-	function getImage(categoryName, makeSubList){
-		var imageLi = document.createElement("li");
-		makeSubList.appendChild(imageLi);
-		var newImg = document.createElement("img");
-		var setSrc = newImg.setAttribute("src", "images/"+ categoryName + ".png");
-		imageLi.appendChild(newImg);
+	function getCatImage(categoryName, makeSubList){
+		var imageNewLi = document.createElement("li");
+		makeSubList.appendChild(imageNewLi);
+		var newCatImg = document.createElement("img");
+		var setSrc = newCatImg.setAttribute("src", "images/"+ categoryName + ".png");
+		imageNewLi.appendChild(newCatImg);
 	}
 	
 	
