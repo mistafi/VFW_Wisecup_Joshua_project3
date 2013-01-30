@@ -142,9 +142,10 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Auto Fill Local Storage as default
 	function autoFillDefault(){
 		//store JSON into Local Storage
-		for(var n in jsonData)
+		for(var n in jsonData){
 			var id = Math.floor(Math.random()*100000001);
 			localStorage.setItem(id, JSON.stringify(jsonData[n]));
+		}
 	}
 	
 	
