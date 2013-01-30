@@ -93,7 +93,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getStorageData(){
 		toggleTheControls("on");
 		if(localStorage.length === 0) {
-			alert("There is no data in Local Storage.");
+			alert("There is no data in Local Storage so default data was added.");
+			autoFillDefault();
 		}
 		//write data from local storage to the browser
 		var makeNewDiv = document.createElement("div");
@@ -126,6 +127,26 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		document.getElementById("mainContainer").appendChild(makeNewDiv);
 	}
+	
+	//Get image for right category
+	function getImage(categoryName, makeSubList){
+		var imageLi = document.createElement("li");
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement("img");
+		var setSrc = newImg.setAttribute("src", "images/"+ categoryName + ".png");
+		imageLi.appendChild(newImg);
+	}
+	
+	
+	
+	//Auto Fill Local Storage as default
+	function autoFillDefault(){
+		//store JSON into Local Storage
+		for(var n in jsonData)
+			var id = Math.floor(Math.random()*100000001);
+			localStorage.setItem(id, JSON.stringify(jsonData[n]));
+	}
+	
 	
 	//Make Navigation Links for Items
 	//create edit and delete links
