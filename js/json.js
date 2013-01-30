@@ -14,9 +14,9 @@ var jsonData = {
 		"inputState": ["State:", "KY"],	
 		"inputZip": ["Zip:", "40601"],	
 		"inputRating": ["Rating:", "8"],	
-		"inputDate": ["Date:", ""],	
-		"inputArea": [],	
-		"inputCheck": []	
+		"inputDate": ["Date:", "2013-01-30"],	
+		"inputArea": ["Area:", ""],	
+		"inputCheck": ["Add to Favorites:", "No"]	
 
 	}
 	
