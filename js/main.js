@@ -70,17 +70,17 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Object properties contain an array with form label and input values
 		getCheckBoxValue();
 		var item			= {};
-		item.dropdownSelect	= ["Group:", document.getElementById("dropdownSelect").value];
+		item.dropdownSelect	= ["Type:", document.getElementById("dropdownSelect").value];
 		item.inputName		= ["Name:", document.getElementById("inputName").value];
 		item.inputAddress	= ["Address:", document.getElementById("inputAddress").value];
 		item.inputAddress2	= ["Address2:", document.getElementById("inputAddress2").value];
 		item.inputCity		= ["City:", document.getElementById("inputCity").value];
 		item.inputState		= ["State:", document.getElementById("inputState").value];
-		item.inputZip		= ["Zip:", document.getElementById("inputZip").value];
+		item.inputZip		= ["Zip Code:", document.getElementById("inputZip").value];
 		item.inputRating	= ["Rating:", document.getElementById("inputRating").value];
 		item.inputDate		= ["Date:", document.getElementById("inputDate").value];
 		//item.inputHidden	= ["Hidden:", $("inputHidden").value];
-		item.inputArea		= ["Area:", document.getElementById("inputArea").value];
+		item.inputArea		= ["Notes:", document.getElementById("inputArea").value];
 		item.inputCheck		= ["Add to Favorites:", favoriteValue];
 		
 		//Save data into local storage. Use stringify to convert object into a string		
@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getStorageData(){
 		toggleTheControls("on");
 		if(localStorage.length === 0) {
-			alert("There is no data in Local Storage so default data was added.");
+			alert("There is no data in Local Storage so example data was added.");
 			autoFillDefault();
 		}
 		//write data from local storage to the browser
@@ -156,22 +156,24 @@ window.addEventListener("DOMContentLoaded", function(){
 		//add edit single item link
 		var editDataLink = document.createElement("a");
 		editDataLink.href = "#";
+		editDataLink.setAttribute("class", "btn btn-info");
 		editDataLink.key = key;
-		var editDataText = "Edit Contact";
+		var editDataText = "Edit Pebble";
 		editDataLink.addEventListener("click", editDataItem);
 		editDataLink.innerHTML = editDataText;
 		navLinksLi.appendChild(editDataLink);
 		
 		//add line break
-		var breakReturnTag = document.createElement("br");
-		navLinksLi.appendChild(breakReturnTag);
+		//var breakReturnTag = document.createElement("br");
+		//navLinksLi.appendChild(breakReturnTag);
 		
 		
 		//add delete single item link
 		var deleteDataLink = document.createElement("a");
 		deleteDataLink.href = "#";
+		deleteDataLink.setAttribute("class", "btn btn-danger");
 		deleteDataLink.key = key;
-		var deleteDataText = "Delete Contact";
+		var deleteDataText = "Delete Pebble";
 		deleteDataLink.addEventListener("click", deleteDataItem);
 		deleteDataLink.innerHTML = deleteDataText;
 		navLinksLi.appendChild(deleteDataLink);
@@ -205,7 +207,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	submit.removeEventListener("click", storeTheData);
 	
 	//change submit button to edit button
-	document.getElementById("submit").value = "Edit Contact";
+	document.getElementById("submit").value = "Edit Pebble";
 	var editSubmit = document.getElementById("submit");
 	
 	//save key value for reuse

@@ -12,10 +12,10 @@ var jsonData = {
 		"inputAddress2": ["Address2:", ""],	
 		"inputCity": ["City:", "Frankfort"],	
 		"inputState": ["State:", "KY"],	
-		"inputZip": ["Zip:", "40601"],	
+		"inputZip": ["Zip Code:", "40601"],	
 		"inputRating": ["Rating:", "8"],	
 		"inputDate": ["Date:", "2013-01-30"],	
-		"inputArea": ["Area:", ""],	
+		"inputArea": ["Notes:", ""],	
 		"inputCheck": ["Add to Favorites:", "No"]	
 	},
 	"pebble2": {
@@ -25,10 +25,23 @@ var jsonData = {
 		"inputAddress2": ["Address2:", ""],	
 		"inputCity": ["City:", "Frankfort"],	
 		"inputState": ["State:", "KY"],	
-		"inputZip": ["Zip:", "40601"],	
+		"inputZip": ["Zip Code:", "40601"],	
 		"inputRating": ["Rating:", "6"],	
 		"inputDate": ["Date:", "2013-01-23"],	
-		"inputArea": ["Area:", ""],	
+		"inputArea": ["Notes:", ""],	
+		"inputCheck": ["Add to Favorites:", "No"]	
+	},
+	"pebble3": {
+		"dropdownSelect": ["Type:", "Retail Store"],
+		"inputName": ["Name:", "Michael's"],	
+		"inputAddress": ["Address:", "55 Allen Way"],	
+		"inputAddress2": ["Address2:", ""],	
+		"inputCity": ["City:", "Frankfort"],	
+		"inputState": ["State:", "KY"],	
+		"inputZip": ["Zip Code:", "40601"],	
+		"inputRating": ["Rating:", "7"],	
+		"inputDate": ["Date:", "2013-01-25"],	
+		"inputArea": ["Notes:", ""],	
 		"inputCheck": ["Add to Favorites:", "No"]	
 	}
 	
