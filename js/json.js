@@ -14,9 +14,9 @@ var jsonData = {
 		"inputState": ["State:", "KY"],	
 		"inputZip": ["Zip Code:", "40601"],	
 		"inputRating": ["Rating:", "8"],	
-		"inputDate": ["Date:", "2013-01-30"],	
+		"inputDate": ["Date of Visit:", "2013-01-30"],	
 		"inputArea": ["Notes:", ""],	
-		"inputCheck": ["Add to Favorites:", "No"]	
+		"inputCheck": ["Favorite:", "No"]	
 	},
 	"pebble2": {
 		"dropdownSelect": ["Type:", "Gas Station"],
@@ -27,9 +27,9 @@ var jsonData = {
 		"inputState": ["State:", "KY"],	
 		"inputZip": ["Zip Code:", "40601"],	
 		"inputRating": ["Rating:", "6"],	
-		"inputDate": ["Date:", "2013-01-23"],	
+		"inputDate": ["Date of Visit:", "2013-01-23"],	
 		"inputArea": ["Notes:", ""],	
-		"inputCheck": ["Add to Favorites:", "No"]	
+		"inputCheck": ["Favorite:", "No"]	
 	},
 	"pebble3": {
 		"dropdownSelect": ["Type:", "Retail Store"],
@@ -40,9 +40,9 @@ var jsonData = {
 		"inputState": ["State:", "KY"],	
 		"inputZip": ["Zip Code:", "40601"],	
 		"inputRating": ["Rating:", "7"],	
-		"inputDate": ["Date:", "2013-01-25"],	
+		"inputDate": ["Date of Visit:", "2013-01-25"],	
 		"inputArea": ["Notes:", ""],	
-		"inputCheck": ["Add to Favorites:", "No"]	
+		"inputCheck": ["Favorite:", "No"]	
 	}
 	
 	

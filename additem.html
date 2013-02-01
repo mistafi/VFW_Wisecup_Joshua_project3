@@ -24,11 +24,11 @@
         <![endif]-->
 
     	<!-- Le fav and touch icons -->
-        <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="img/favicon.png">
 	</head>
 
     <body>
@@ -62,8 +62,11 @@
                       <li><a id="addPebble" href="additem.html" style="display:none;"><i class="icon-plus"></i> Add New Item</a></li>
                     </ul>  
 				</nav>   
-                 <p>You're on your way! Adding a Pebble is adding a location to your list. Add Pebbles to remember your favorite places.
-                 </p>
+                 <div class="alert alert-info">
+                 <button type="button" class="close" data-dismiss="alert">&times;</button>
+                 <h2>Add More Pebbles!</h2>
+                 Add Pebbles to remember your favorite places.
+                 </div>
                  <ul id="errorMessages"></ul>
                  <form class="form-horizontal" id="pebbleForm">
                    <fieldset>
@@ -116,7 +119,7 @@
                     </div>
                   </div> 
                   <div class="control-group">
-                    <label class="control-label" for="inputDate">Date</label>
+                    <label class="control-label" for="inputDate">Date of Visit</label>
                     <div class="controls">
                       <input type="date" id="inputDate">
                     </div>
@@ -171,6 +174,8 @@
         <!-- Placed at the end of the document so the pages load faster -->
 		<!--<script src="js/bootstrap.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/json.js"></script>		<script src="js/main.js"></script>
+        <script src="js/bootstrap.js"></script>
+		<script src="js/json.js"></script>		
+		<script src="js/main.js"></script>
 	</body>
 </html>
